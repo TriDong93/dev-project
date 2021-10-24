@@ -70,3 +70,38 @@ a {
   display: flex;
   justify-content: flex-end;
 }
+
+.movies {
+  margin-top: 50px;
+  width: 100%;
+
+  .card {
+    display: flex;
+    margin: auto;
+    width: 800px;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .movie-iframe {
+    margin-right: 40px;
+  }
+
+  .movie-content {
+    .title {
+      margin: 0;
+      font-size: 17px;
+      color: red;
+    }
+
+    .share-by {
+      margin: 10px 0px;
+      font-size: 15px;
+    }
+
+    .desc {
+      margin: 10px 0;
+      line-height: 1.4;
+    }
+  }
+}
