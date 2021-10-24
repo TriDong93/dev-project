@@ -1,0 +1,72 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+* {
+  box-sizing: border-box; 
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+#main {
+  display: flex;
+  min-height: calc(100vh - 40vh);
+}
+
+.wrapper {
+  margin: auto;
+  max-width: 70rem;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.header {
+  border-bottom: solid 1px #000000;
+  padding-bottom: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.header-logo {
+  .home-logo-svg {
+    svg {
+      width: 50px;
+      height: 50px;
+    }
+  }
+  .logo-text {
+    font-size: 41px;
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  margin: 0;
+  li a {
+    display: block;
+    padding: 15px 5px;
+  }
+}
+
+.main-nav {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
