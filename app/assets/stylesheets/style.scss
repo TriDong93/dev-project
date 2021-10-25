@@ -59,16 +59,66 @@ a {
   align-items: center;
   list-style-type: none;
   margin: 0;
-  li a {
-    display: block;
-    padding: 15px 5px;
-  }
 }
 
 .main-nav {
   flex: 1;
   display: flex;
   justify-content: flex-end;
+  position: relative;
+
+  .item {
+    margin-left: 10px;
+  }
+}
+
+.btn {
+  padding: 3px 6px;
+  background: white;
+  font-size: 14px;
+  border: solid 2px;
+  border-radius: 2px;
+}
+
+.w200 {
+  width: 200px;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-sm {
+  font-size: 15px;
+}
+
+.mgl10 {
+  margin-left: 10px;
+}
+
+.mgr10 {
+  margin-right: 10px;
+}
+
+.input-form {
+  padding: 3px 6px;
+}
+
+.failed-message {
+  display: flex;
+  font-size: 12px;
+  position: absolute;
+  right: 0;
+  margin-top: 5px;
+
+  .msg {
+    margin-left: 3px;
+    color: #ff5555;
+  }
+
+  .comma:not(:last-child):after {
+    content: ", ";
+  }
 }
 
 .movies {
