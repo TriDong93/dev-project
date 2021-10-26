@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   validates :username, presence: true, uniqueness: { case_sensitive: false }
 
+  has_many :share_videos, dependent: :destroy
+
   protected
 
   # From Devise module Validatable
