@@ -1,20 +1,5 @@
 <div id="main" class="wrapper">
   <div class="movies">
-      <% @share_videos.each do |video| %>
-        <div class="card">
-          <div class="movie-iframe">
-            <iframe width="350" height="200"
-              src="https://www.youtube.com/embed/<%= video.youtube_id %>">
-            </iframe>
-          </div>
-          <div class="movie-content">
-            <h2 class="title">Movie Title</h2>
-            <h5 class="share-by">Share by: @<%= video.user.username %></h5>
-            <div class="like-bok"></div>
-            <div>Description: </div>
-            <p class="desc">It only takes a sentence to change your life. The best writers and thinkers are able to sum up a big thought or concept in just a few simple words. Delight in the following quotes that can get you up and moving and change the way you think with purposeful brevity.</p>
-          </div>
-        </div>
-    <% end %>
+    <%= render partial: "share_video", collection: @share_videos, as: :video %>
   </div>
 </div>

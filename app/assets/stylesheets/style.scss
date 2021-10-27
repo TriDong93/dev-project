@@ -186,3 +186,49 @@ a {
     margin-top: 5px;
   }
 }
+
+
+.bg-icon {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background-size: 14px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.like-icon {
+  background-image: url(/assets/thumb-up.png);
+}
+
+.dislike-icon {
+  background-image: url(/assets/thumb-down.png);
+}
+
+.hide-me {
+  -moz-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Firefox */
+  -webkit-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Safari and Chrome */
+  -o-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Opera */
+  animation: cssAnimation 0s ease-in 5s forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+@keyframes cssAnimation {
+  to {
+      width: 0;
+      height: 0;
+      overflow: hidden;
+  }
+}
+
+@-webkit-keyframes cssAnimation {
+  to {
+      width: 0;
+      height: 0;
+      visibility: hidden;
+  }
+}
