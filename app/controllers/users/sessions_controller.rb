@@ -41,9 +41,9 @@ class Users::SessionsController < Devise::SessionsController
     params.require(:user).permit(:username, :password)
   end
 
-  # def auth_options
-  #   { scope: resource_name, recall: "pages#index" }
-  # end
+  def auth_options
+    { scope: resource_name, recall: "pages#index" }
+  end
 
   def build_resource(hash = {})
     self.resource = resource_class.new_with_session(hash, session)
