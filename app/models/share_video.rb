@@ -1,5 +1,5 @@
 class ShareVideo < ApplicationRecord
-  YOUTUBE_REGEXP = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})?$/
+  YOUTUBE_REGEXP = /(?:youtube(?:-nocookie)?\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/
 
   validates :url, presence: true
   validate :youtube_url_must_be_valid
@@ -8,9 +8,8 @@ class ShareVideo < ApplicationRecord
 
   scope :recent, -> { order(created_at: :desc) }
 
-  def youtube_id(youtube_url)
-    regex = /(?:youtube(?:-nocookie)?\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/
-    match = regex.match(youtube_url)
+  def youtube_id
+    match = YOUTUBE_REGEXP.match(url)
     if match && !match[1].blank?
       match[1]
     else
@@ -21,7 +20,7 @@ class ShareVideo < ApplicationRecord
   private
 
   def youtube_url_must_be_valid
-    return if url.blank? || url =~ YOUTUBE_REGEXP
+    return if url.blank? || youtube_id.present?
 
     errors.add(:url, 'is invalid')
   end
