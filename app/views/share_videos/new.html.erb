@@ -1,0 +1,19 @@
+<div id="main" class="wrapper">
+  <div class='video-box'>
+    <span class='innertext'>Share a Youtube movie</span>
+    <div class='share-video'>
+      <%= form_for @video, url: share_videos_path, method: :post do |f| %>
+        <div class="flex-center">
+          <%= f.label :url, "Youtube URL:", class:'text-sm' %>
+          <%= f.text_field :url, class: "input-form w200 mgl10" %>
+        </div>
+        <% @video.errors.full_messages_for(:url).each do |message| %>
+          <div class="failed-ms"><%= message %></div>
+        <% end %>
+        <div class="text-right">
+          <%= f.submit 'Share', class: 'btn w200 mgl10' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

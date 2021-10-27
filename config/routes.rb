@@ -3,4 +3,10 @@ Rails.application.routes.draw do
 
   # get 'pages/home'
   root 'pages#index'
+
+  resources :share_videos, path: 'share',  only: [:create] do
+    collection do
+      get :new
+    end
+  end
 end

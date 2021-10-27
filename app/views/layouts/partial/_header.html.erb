@@ -23,7 +23,7 @@
                 Welcome <%= current_user.username %>
               </li>
               <li class="item">
-                <%= link_to 'Share a movie', '#', class: 'btn mgl10' %>
+                <%= link_to 'Share a movie', share_videos_path, class: 'btn mgl10' %>
               </li>
               <li class="item">
                 <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn mgl10' %>
