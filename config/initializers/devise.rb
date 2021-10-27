@@ -283,7 +283,6 @@ Devise.setup do |config|
   #   manager.default_strategies(scope: :user).unshift :some_external_strategy
   # end
 
-  require 'users/custom_failure.rb'
 
   config.warden do |manager|
     manager.failure_app = CustomFailure
