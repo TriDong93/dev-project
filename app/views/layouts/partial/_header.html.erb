@@ -33,10 +33,10 @@
           <%= form_for(:user, url: session_path(:user)) do |f| %>
             <ul class="menu">
               <li class="item">
-                <%= f.text_field :username, class: 'input-form'  %>
+                <%= f.text_field :username, class: 'input-form', placeholder: "username"  %>
               </li>
               <li class="item">
-                <%= f.password_field :password, class: 'input-form' %>
+                <%= f.password_field :password, class: 'input-form', placeholder: "password" %>
               </li>
               <li class="item">
                 <%= f.submit 'Login / Register', class: 'btn' %>
